@@ -2,6 +2,3 @@
 *.lock
 \bin
 \obj
-AspNetCoreTodo/AspNetCoreTodo/.vs/AspNetCoreTodo/DesignTimeBuild/.dtbcache
-AspNetCoreTodo/AspNetCoreTodo/.vs/AspNetCoreTodo/v15/.suo
-AspNetCoreTodo/AspNetCoreTodo/AspNetCoreTodo.csproj
