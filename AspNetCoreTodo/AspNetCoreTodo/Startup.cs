@@ -39,7 +39,7 @@ namespace AspNetCoreTodo
             services.AddMvc();
 
             //add custom services here
-            services.AddSingleton<ITodoItemService, FakeTodoItemService>();
+            services.AddScoped<ITodoItemService, TodoItemService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
