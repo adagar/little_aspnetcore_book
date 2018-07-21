@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AspNetCoreTodo\AspNetCoreTodo.csproj" />
+    <ProjectReference Include="C:\Users\A Nick Garza\Desktop\CareerDevs\little_aspnetcore_book\AspNetCoreTodo\AspNetCoreTodo\AspNetCoreTodo.csproj" />
   </ItemGroup>
 
 </Project>
