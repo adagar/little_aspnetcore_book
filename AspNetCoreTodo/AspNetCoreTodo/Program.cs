@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 
+
 namespace AspNetCoreTodo
 {
     public class Program
@@ -16,9 +17,26 @@ namespace AspNetCoreTodo
         public static void Main(string[] args)
         {
             //BuildWebHost(args).Run();
+            //Original, from book
+            /*
             var host = BuildWebHost(args);
             InitializeDatabase(host);
             host.Run();
+            */
+            //New hosting config, for AWS
+            /*
+            var host = new WebHostBuilder()
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
+                .UseStartup<Startup>()
+                .Build();
+            */
+            //now let's merge book & aws
+            var host = BuildWebHost(args);
+            InitializeDatabase(host);
+            host.Run();
+
         }
 
         private static void InitializeDatabase(IWebHost host)
@@ -41,6 +59,9 @@ namespace AspNetCoreTodo
         }
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
     }

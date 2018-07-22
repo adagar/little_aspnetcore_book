@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using AspNetCoreTodo.Data;
@@ -45,6 +46,8 @@ namespace AspNetCoreTodo
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            //From original book
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -65,6 +68,12 @@ namespace AspNetCoreTodo
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            /*
+            app.Run(context =>
+            {
+                return context.Response.WriteAsync("Hello from ASP.NET Core!");
+            });
+            */
         }
     }
 }
